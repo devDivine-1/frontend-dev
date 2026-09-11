@@ -1,0 +1,13 @@
+{
+  "name": "sharp-frontend",
+  "version": "1.0.0",
+  "description": "A sharp, modern frontend served with Node.js",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "dependencies": {
+    "express": "^4.21.0"
+  }
+}

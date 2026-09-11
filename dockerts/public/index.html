@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SharpFront</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">SharpFront</div>
+    <div class="nav-links">
+      <a href="#features">Features</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <button class="cta-btn" id="ctaNav">Get Started</button>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-content">
+      <span class="badge">Modern Stack</span>
+      <h1>Build Fast.<br/>Ship Faster.</h1>
+      <p>A razor-sharp frontend powered by Node.js and containerized with Docker for seamless deployment anywhere.</p>
+      <div class="hero-actions">
+        <button class="primary-btn" id="ctaHero">Launch App</button>
+        <a href="https://github.com" target="_blank" class="ghost-btn">View Source</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="glow-orb orb-1"></div>
+      <div class="glow-orb orb-2"></div>
+      <div class="glow-orb orb-3"></div>
+      <div class="terminal">
+        <div class="terminal-bar">
+          <span class="dot red"></span>
+          <span class="dot yellow"></span>
+          <span class="dot green"></span>
+        </div>
+        <div class="terminal-body" id="terminalBody">
+          <p class="line"><span class="prompt">$</span> docker build -t sharp-frontend .</p>
+          <p class="line"><span class="prompt">$</span> docker run -p 3000:3000 sharp-frontend</p>
+          <p class="line success"><span class="prompt">$</span> Server running on http://0.0.0.0:3000</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="features" id="features">
+    <h2>Why SharpFront?</h2>
+    <div class="grid">
+      <div class="card">
+        <div class="icon">⚡</div>
+        <h3>Lightning Fast</h3>
+        <p>Express.js backend with optimized static file serving for blazing load times.</p>
+      </div>
+      <div class="card">
+        <div class="icon">🐳</div>
+        <h3>Docker Ready</h3>
+        <p>Multi-stage Docker builds with Alpine base for minimal image size.</p>
+      </div>
+      <div class="card">
+        <div class="icon">🔒</div>
+        <h3>Secure by Default</h3>
+        <p>Non-root container execution and hardened production configuration.</p>
+      </div>
+      <div class="card">
+        <div class="icon">📦</div>
+        <h3>Zero Config</h3>
+        <p>Just build and run. No environment setup headaches.</p>
+      </div>
+      <div class="card">
+        <div class="icon">🎨</div>
+        <h3>Clean Design</h3>
+        <p>Modern CSS with glass morphism, gradients, and smooth animations.</p>
+      </div>
+      <div class="card">
+        <div class="icon">📡</div>
+        <h3>API Ready</h3>
+        <p>Built-in health check endpoint and easy to extend with more routes.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="about-content">
+      <h2>Under the Hood</h2>
+      <p>This frontend is served by a lightweight Node.js/Express server, containerized using a multi-stage Docker build with Alpine Linux for a minimal footprint. It's ready for any orchestrator — Docker Compose, Kubernetes, or a simple <code>docker run</code>.</p>
+      <div class="stats">
+        <div class="stat">
+          <span class="stat-number" id="imageSize">~45MB</span>
+          <span class="stat-label">Image Size</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number">&lt;100ms</span>
+          <span class="stat-label">Cold Start</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number">0</span>
+          <span class="stat-label">Dependencies *</span>
+        </div>
+      </div>
+      <p class="fine-print">* Runtime dependencies only — Express.</p>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <h2>Ready to Build?</h2>
+    <p>Clone, build, and deploy in seconds.</p>
+    <div class="code-block">
+      <code>git clone &lt;repo&gt; && cd dockerts && docker compose up --build</code>
+    </div>
+  </section>
+
+  <footer>
+    <p>SharpFront &copy; 2026 &mdash; Built with Node.js &amp; Docker</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
