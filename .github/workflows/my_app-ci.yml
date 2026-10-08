@@ -1,0 +1,37 @@
+name: CI
+
+on:
+  push:
+    paths:
+      - "my_app/**"
+      - ".github/workflows/my_app-ci.yml"
+  pull_request:
+    paths:
+      - "my_app/**"
+      - ".github/workflows/my_app-ci.yml"
+  workflow_dispatch:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: my_app
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+          cache-dependency-path: my_app/frontend/package-lock.json
+      - name: Compile Python source
+        run: python -m compileall -q backend/app
+      - name: Install frontend dependencies
+        run: npm ci --prefix frontend
+      - name: Validate Compose configuration
+        run: docker compose config --quiet
+      - name: Build application images
+        run: docker compose build
